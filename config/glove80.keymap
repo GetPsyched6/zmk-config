@@ -75,7 +75,7 @@
 			#binding-cells = <2>;
 			flavor = "balanced";
 			bindings = <&kp ESC>, <&mo NAV>;
-		}
+		};
 		
 		sqtund: sqt_under {
 			compatible = "zmk,behavior-mod-morph";
