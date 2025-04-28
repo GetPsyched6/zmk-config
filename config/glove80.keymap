@@ -74,7 +74,7 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			bindings = <&kp ESC>, <&mo NAV>;
+			bindings = <&mo NAV>, <&kp ESC>;
 		};
 		
 		sqtund: sqt_under {
