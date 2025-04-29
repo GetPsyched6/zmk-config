@@ -83,10 +83,10 @@
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
-		quescom: qmark_comma {
+		comques: comma_qmark {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp QMARK>, <&kp COMMA>;
+			bindings = <&kp COMMA>, <&kp QMARK>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
@@ -358,7 +358,7 @@
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp TAB        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
-			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &caps_word &to NUMACT   &kp K   &kp P   &kp DOT   &minusdqt     &fslhlt    &quescom
+			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &caps_word &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &fslhlt    &minusdqt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &kp RET  &kp LALT   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
