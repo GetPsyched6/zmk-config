@@ -85,10 +85,6 @@
 			bindings = <&mo>, <&caps_word>;
 		};
 		
-		&caps_word {
-			continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
-		};
-		
 		sqtund: sqt_under {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
@@ -329,6 +325,11 @@
 		};
 		
 	};
+	
+	&caps_word {
+		continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
+	};
+	
 	
 	keymap {
 		compatible = "zmk,keymap";
