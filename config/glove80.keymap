@@ -25,7 +25,7 @@
 #define FACTORY_TEST 7
 
 &caps_word {
-	continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
+	continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE sqtund>;
 };
 
 / {
