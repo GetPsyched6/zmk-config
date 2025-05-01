@@ -316,7 +316,7 @@
 		};
 		
 	};
-	
+	//add underscore to capsword add qwerty add pp button to thumb cluster
 	keymap {
 		compatible = "zmk,keymap";
 		
@@ -359,7 +359,7 @@
 			&kp TAB        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
 			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &fslhlt    &minusdqt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &caps_word  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &hmr &to SECRET &caps_word  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
 		
@@ -405,9 +405,9 @@
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &none           &none           &none           &none                         &none     &none   &none 	&none	&none		&none
 			&trans            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
-			&trans            &none               &none        &none        &none       &none                                    &none    &macos    &none    &none     &none     &none
-			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &none  			&none  &kp LALT &to DEFAULT   &none   &none   &none   &none     &none    &none
-			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE     &none  &none    &none    &none    &none
+			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
+			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &none  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
+			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &none  &none    &none    &none    &none
 			>;
 		};
 		
