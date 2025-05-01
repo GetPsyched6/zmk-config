@@ -20,8 +20,9 @@
 #define NUMACT 2
 #define NAV 3
 #define SECRET 4
-#define MAGIC 5
-#define FACTORY_TEST 6
+#define QWERTY 5
+#define MAGIC 6
+#define FACTORY_TEST 7
 
 / {
 	behaviors {
@@ -74,6 +75,18 @@
 			flavor = "balanced";
 			tapping-term-ms = <200>;
 			bindings = <&mo>, <&kp>;
+		};
+		
+		capslayhold: caps_hold_tap_layer {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <200>;
+			bindings = <&mo>, <&caps_word>;
+		};
+		
+		&caps_word {
+			continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
 		};
 		
 		sqtund: sqt_under {
@@ -316,7 +329,7 @@
 		};
 		
 	};
-	//add underscore to capsword add qwerty add pp button to thumb cluster
+	
 	keymap {
 		compatible = "zmk,keymap";
 		
@@ -358,8 +371,8 @@
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp TAB        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
-			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &fslhlt    &minusdqt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &hmr &to SECRET &caps_word  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET 0  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
 		
@@ -403,11 +416,23 @@
 		secrets_layer {
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
-			&none            &none               &none           &none           &none           &none                         &none     &none   &none 	&none	&none		&none
+			&none            &none               &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
 			&trans            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
 			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
 			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &none  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &none  &none    &none    &none    &none
+			>;
+		};
+		
+		// DONE L5
+		qwerty_layer {
+			bindings = <
+			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
+			&kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp EQUAL
+			&escnav NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
+			&kp BSLH      &kp Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &kp LCTRL   &none  &none  &kp LALT &to DEFAULT   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &none  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
 		
