@@ -24,6 +24,10 @@
 #define MAGIC 6
 #define FACTORY_TEST 7
 
+&caps_word {
+	continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
+};
+
 / {
 	behaviors {
 		// For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -325,11 +329,6 @@
 		};
 		
 	};
-	
-	&caps_word {
-		continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE>;
-	};
-	
 	
 	keymap {
 		compatible = "zmk,keymap";
