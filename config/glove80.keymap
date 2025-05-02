@@ -24,10 +24,6 @@
 #define MAGIC 6
 #define FACTORY_TEST 7
 
-&caps_word {
-	continue-list = <UNDERSCORE MINUS SQT BACKSPACE DELETE sqtund>;
-};
-
 / {
 	behaviors {
 		// For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -54,11 +50,9 @@
 			#binding-cells = <2>;
 			flavor = "balanced";
 			require-prior-idle-ms = <150>;
-			tapping-term-ms = <280>;
+			tapping-term-ms = <200>;
 			quick-tap-ms = <175>;
 			bindings = <&kp>, <&kp>;
-			// hold-trigger-key-positions = < ... >;// List of keys on the right side of the keyboard
-			// hold-trigger-on-release;
 		};
 		
 		hmr: home_row_mod_right {
@@ -66,11 +60,9 @@
 			#binding-cells = <2>;
 			flavor = "balanced";
 			require-prior-idle-ms = <150>;
-			tapping-term-ms = <280>;
+			tapping-term-ms = <200>;
 			quick-tap-ms = <175>;
 			bindings = <&kp>, <&kp>;
-			// hold-trigger-key-positions = < ... >;// List of keys on the left side of the keyboard
-			// hold-trigger-on-release;
 		};
 		
 		escnav: escape_nav_layer {
@@ -371,7 +363,7 @@
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp TAB        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
-			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &none  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
+			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET 0  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
@@ -383,7 +375,7 @@
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&trans            &kp EXCL           &kp AT        &kp HASH        &hml LSHIFT DOLLAR        &kp PERCENT                       		&kp CARET     &hmr LSHIFT AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
 			&trans            &kp FSLH               &kp MINUS        &kp SQT        &kp DQT       &kp UNDER                     		&kp BSLH    &kp LBRC    &kp RBRC    &kp PIPE     &kp SEMI     &kp COMMA
-			&none      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &none  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
+			&none      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   					&none  &kp RET   &kp SPACE    	 &kp UP  &kp DOWN    &none    &none    &none
 			>;
 		};
@@ -395,7 +387,7 @@
 			&none            &none               &none           &none           &none           &none                                  &kp LPAR     &none   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
 			&trans            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
 			&trans            &none               &kp LEFT        &kp C_PREV        &kp C_PP       &kp C_NEXT                                     &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-			&none      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &none  			&none  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
+			&none      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &kp LALT  			&none  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
 			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
 			>;
 		};
@@ -404,11 +396,11 @@
 		nav_layer {
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
-			&none            &none               &reddit           &goog           &yt           &none                         &none     &none   &dskleft 	&dskrght	&none		&xtab
-			&trans            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &to SECRET     &kp HOME    &kp UP    &kp END     &none    &none
+			&none            &none               &reddit           &goog           &yt           &none                         &dskleft     &dskrght   &none 	&none	&none		&xtab
+			&trans            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &none     &kp HOME    &kp UP    &kp END     &none    &none
 			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &none    &kp LEFT    &kp DOWN    &kp RIGHT     &none     &lastapp
-			&none      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP       &none   &to DEFAULT   &kp LCTRL   &none  			&none  &kp LALT &to DEFAULT   &none   &prevtab   &nxttab   &omni     &none    &none
-			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE     &back  &fwd    &none    &none    &none
+			&none      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &none   &none   &prevtab   &nxttab   &omni     &none    &none
+			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE     &back  &fwd    &none    &none    &to SECRET
 			>;
 		};
 		
@@ -419,8 +411,8 @@
 			&none            &none               &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
 			&trans            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
 			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
-			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &none  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
-			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &none  &none    &none    &none    &none
+			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
+			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp left  &kp right    &none    &none    &none
 			>;
 		};
 		
@@ -431,7 +423,7 @@
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp EQUAL
 			&escnav NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
-			&kp BSLH      &kp Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &kp LCTRL   &none  &none  &kp LALT &to DEFAULT   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
+			&kp BSLH      &kp Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &kp LCTRL   &kp LALT  &to DEFAULT  &kp LALT &none   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &none  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
