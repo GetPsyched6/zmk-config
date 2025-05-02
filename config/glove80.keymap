@@ -412,7 +412,7 @@
 			&trans            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
 			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
 			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
-			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp left  &kp right    &none    &none    &none
+			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp LEFT  &kp RIGHT    &none    &none    &none
 			>;
 		};
 		
