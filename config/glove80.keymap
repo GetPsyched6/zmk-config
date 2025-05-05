@@ -385,7 +385,7 @@
 			&kp BSLH        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
 			&kp TAB      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET CAPS  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &lay_td
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET CAPSLOCK  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &lay_td
 			>;
 		};
 		
@@ -485,14 +485,14 @@
 	};
 };
 
-#define def0 0xFF0092 // magenta
+#define def0 0xFF0099 // magenta
 #define onG 0x00FF00 // green
-#define sym1 0xFFC300 // yellow
+#define sym1 0xFF7B00 // orange
 #define num2 0x00FF00 // green
 #define nav3 0x00FFEA // blue
 #define sec4 0xFFFFFF // white
 #define qwe5 0x0051FF // dark blue
-#define fig6 0xC800FF // pink
+#define fig6 0xFF6EE4 // pink
 
 / {
 	underglow-layer {
@@ -510,7 +510,7 @@
 		};
 		symbol {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug sym1 &ug sym1                                                                             &ug sym1     &ug sym1        &ug def0       &ug def0     &ug def0
+			&ug sym1 &ug sym1 &ug sym1 &ug sym1 &ug sym1                                                                             &ug sym1     &ug sym1        &ug sym1       &ug sym1     &ug sym1
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
@@ -521,7 +521,7 @@
 		};
 		numact {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug num2 &ug num2                                                                             &ug num2     &ug num2        &ug def0       &ug def0     &ug def0
+			&ug num2 &ug num2 &ug num2 &ug num2 &ug num2                                                                             &ug num2     &ug num2        &ug num2       &ug num2     &ug num2
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
@@ -532,7 +532,7 @@
 		};
 		nav {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug nav3 &ug nav3                                                                             &ug nav3     &ug nav3        &ug def0       &ug def0     &ug def0
+			&ug nav3 &ug nav3 &ug nav3 &ug nav3 &ug nav3                                                                             &ug nav3     &ug nav3        &ug nav3       &ug nav3     &ug nav3
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
@@ -543,7 +543,7 @@
 		};
 		secret {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug def0       &ug def0     &ug def0
+			&ug sec4 &ug sec4 &ug sec4 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug sec4       &ug sec4     &ug sec4
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
@@ -554,7 +554,7 @@
 		};
 		qwerty {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug qwe5 &ug qwe5                                                                             &ug qwe5     &ug qwe5        &ug def0       &ug def0     &ug def0
+			&ug qwe5 &ug qwe5 &ug qwe5 &ug qwe5 &ug qwe5                                                                             &ug qwe5     &ug qwe5        &ug qwe5       &ug qwe5     &ug qwe5
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
@@ -565,7 +565,7 @@
 		};
 		figma {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug fig6 &ug fig6                                                                             &ug fig6     &ug fig6        &ug def0       &ug def0     &ug def0
+			&ug fig6 &ug fig6 &ug fig6 &ug fig6 &ug fig6                                                                             &ug fig6     &ug fig6        &ug fig6       &ug fig6     &ug fig6
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
