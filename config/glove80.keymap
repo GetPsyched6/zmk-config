@@ -1,7 +1,9 @@
 /*
 * Copyright (c) 2020 The ZMK Contributors
+* Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
+* Version: Mark 9
 */
 
 #include <behaviors.dtsi>
@@ -10,6 +12,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb_colors.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define HYPER LC(LS(LG(LALT)))
@@ -21,8 +24,9 @@
 #define NAV 3
 #define SECRET 4
 #define QWERTY 5
-#define MAGIC 6
-#define FACTORY_TEST 7
+#define FIGMA 6
+#define MAGIC 7
+#define FACTORY_TEST 8
 
 / {
 	behaviors {
@@ -78,7 +82,7 @@
 			#binding-cells = <2>;
 			flavor = "balanced";
 			tapping-term-ms = <200>;
-			bindings = <&mo>, <&caps_word>;
+			bindings = <&mo>, <&kp>;
 		};
 		
 		sqtund: sqt_under {
@@ -109,6 +113,13 @@
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
+		lay_td: tap_dance_0 {
+			compatible = "zmk,behavior-tap-dance";
+			label = "LAYER_TAP_DANCE";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&none>, <&to FIGMA>;
+		};
 	};
 	
 	macros {
@@ -202,6 +213,16 @@
 			bindings
 			= <&macro_press &kp LCMD>
 			, <&macro_tap &kp W>
+			, <&macro_release &kp LCMD>
+			;
+		};
+		
+		newtab: new_tab {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_press &kp LCMD>
+			, <&macro_tap &kp N>
 			, <&macro_release &kp LCMD>
 			;
 		};
@@ -361,10 +382,10 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
-			&kp TAB        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
+			&kp BSLH        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
-			&kp BSLH      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET 0  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			&kp TAB      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET CAPS  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &lay_td
 			>;
 		};
 		
@@ -373,9 +394,9 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
-			&trans            &kp EXCL           &kp AT        &kp HASH        &hml LSHIFT DOLLAR        &kp PERCENT                       		&kp CARET     &hmr LSHIFT AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
+			&none            &kp EXCL           &kp AT        &kp HASH        &hml LSHIFT DOLLAR        &kp PERCENT                       		&kp CARET     &hmr LSHIFT AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
 			&trans            &kp FSLH               &kp MINUS        &kp SQT        &kp DQT       &kp UNDER                     		&kp BSLH    &kp LBRC    &kp RBRC    &kp PIPE     &kp SEMI     &kp COMMA
-			&none      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
+			&trans      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   					&none  &kp RET   &kp SPACE    	 &kp UP  &kp DOWN    &none    &none    &none
 			>;
 		};
@@ -385,10 +406,10 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &none           &none           &none           &none                                  &kp LPAR     &none   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
-			&trans            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
+			&none            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
 			&trans            &none               &kp LEFT        &kp C_PREV        &kp C_PP       &kp C_NEXT                                     &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-			&none      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &kp LALT  			&none  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
-			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
+			&trans      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &kp LALT  			&none  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
+			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
 			>;
 		};
 		
@@ -397,9 +418,9 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &reddit           &goog           &yt           &none                         &dskleft     &dskrght   &none 	&none	&none		&xtab
-			&trans            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &none     &kp HOME    &kp UP    &kp END     &none    &none
+			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &none     &kp HOME    &kp UP    &kp END     &none    &none
 			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &none    &kp LEFT    &kp DOWN    &kp RIGHT     &none     &lastapp
-			&none      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &none   &none   &prevtab   &nxttab   &omni     &none    &none
+			&trans      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &none   &newtab   &prevtab   &nxttab   &omni     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE     &back  &fwd    &none    &none    &to SECRET
 			>;
 		};
@@ -409,9 +430,9 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
-			&trans            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
+			&none            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
 			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
-			&none      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
+			&trans      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp LEFT  &kp RIGHT    &none    &none    &none
 			>;
 		};
@@ -421,10 +442,22 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
-			&kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp EQUAL
+			&kp BSLH        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp EQUAL
 			&escnav NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
-			&kp BSLH      &kp Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &kp LCTRL   &kp LALT  &to DEFAULT  &kp LALT &none   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
+			&kp TAB      &kp Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &kp LCTRL   &kp LALT  &to DEFAULT  &kp LALT &none   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &none  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			>;
+		};
+		
+		// DONE L6
+		figma_layer {
+			bindings = <
+			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&none            &none               &none           &none           &none           &none                         &none     &none   &none 	&none	&none		&none
+			&none            &none               &none           &none          &none           &none                          &none     &kp HOME    &kp UP    &kp END     &none    &none
+			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &none                                    &none    &kp LEFT    &kp DOWN    &kp RIGHT     &none     &none
+			&trans     &kp LG(Z)   &kp LG(X)   &kp LG(D)  &kp LG(C)   &kp LG(V)   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &none   &none   &none   &none   &none     &none    &none
+			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE     &none  &none    &none    &none    &none
 			>;
 		};
 		
@@ -448,6 +481,98 @@
 			&kp N4   &kp N0   &kp N6   &kp N2   &kp N8   &kp N3   &kp N4   &kp N5   &kp N6      &kp N6   &kp N5   &kp N4   &kp N3   &kp N8   &kp N2   &kp N6   &kp N0   &kp N4
 			&kp N5   &kp N1   &kp N7   &kp N3   &kp N9            &kp N7   &kp N8   &kp N9      &kp N9   &kp N8   &kp N7            &kp N9   &kp N3   &kp N7   &kp N1   &kp N5
 			>;
+		};
+	};
+};
+
+#define def0 0xFF0092 // magenta
+#define onG 0x00FF00 // green
+#define sym1 0xFFC300 // yellow
+#define num2 0x00FF00 // green
+#define nav3 0x00FFEA // blue
+#define sec4 0xFFFFFF // white
+#define qwe5 0x0051FF // dark blue
+#define fig6 0xC800FF // pink
+
+/ {
+	underglow-layer {
+		compatible  = "zmk,underglow-layer";
+		default {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <DEFAULT>;
+		};
+		symbol {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug sym1 &ug sym1                                                                             &ug sym1     &ug sym1        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <SYMBOL>;
+		};
+		numact {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug num2 &ug num2                                                                             &ug num2     &ug num2        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <NUMACT>;
+		};
+		nav {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug nav3 &ug nav3                                                                             &ug nav3     &ug nav3        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <NAV>;
+		};
+		secret {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <SECRET>;
+		};
+		qwerty {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug qwe5 &ug qwe5                                                                             &ug qwe5     &ug qwe5        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <QWERTY>;
+		};
+		figma {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug fig6 &ug fig6                                                                             &ug fig6     &ug fig6        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <FIGMA>;
 		};
 	};
 };
