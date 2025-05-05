@@ -487,7 +487,7 @@
 
 #define def0 0xFF0062 // magenta
 #define onG 0x00FF00 // green
-#define sym1 0xFF7B00 // orange
+#define sym1 0xFBFF00 // yellow
 #define num2 0x00FF00 // green
 #define nav3 0x00FFEA // blue
 #define sec4 0xFFFFFF // white
