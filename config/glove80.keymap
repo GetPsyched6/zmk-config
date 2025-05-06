@@ -27,6 +27,7 @@
 #define FIGMA 6
 #define MAGIC 7
 #define FACTORY_TEST 8
+#define CAPLAYER 9
 
 / {
 	behaviors {
@@ -82,7 +83,7 @@
 			#binding-cells = <2>;
 			flavor = "balanced";
 			tapping-term-ms = <200>;
-			bindings = <&mo>, <&caps_word>;
+			bindings = <&mo>, <&to>;
 		};
 		
 		sqtund: sqt_under {
@@ -385,7 +386,7 @@
 			&kp BSLH        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
 			&kp TAB      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET 0  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &lay_td
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET CAPLAYER  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &lay_td
 			>;
 		};
 		
@@ -394,7 +395,7 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
-			&none            &kp EXCL           &kp AT        &kp HASH        &hml LSHIFT DOLLAR        &kp PERCENT                       		&kp CARET     &hmr LSHIFT AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
+			&none            &kp EXCL           &kp AT        &kp HASH        &kp DOLLAR        &kp PERCENT                       		&kp CARET     &kp AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
 			&trans            &kp FSLH               &kp MINUS        &kp SQT        &kp DQT       &kp UNDER                     		&kp BSLH    &kp LBRC    &kp RBRC    &kp PIPE     &kp SEMI     &kp COMMA
 			&trans      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   					&none  &kp RET   &kp SPACE    	 &kp UP  &kp DOWN    &none    &none    &none
@@ -482,17 +483,30 @@
 			&kp N5   &kp N1   &kp N7   &kp N3   &kp N9            &kp N7   &kp N8   &kp N9      &kp N9   &kp N8   &kp N7            &kp N9   &kp N3   &kp N7   &kp N1   &kp N5
 			>;
 		};
+		
+		// DONE L9
+		caps_layer {
+			bindings = <
+			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
+			&kp BSLH        &kp LS(B)   &kp LS(L)       &kp LS(D)       &hml LSHIFT LS(W)       &kp LS(Z)                                                                      &kp UNDER    &hmr LSHIFT LS(F)   &kp LS(O)       &kp LS(U)       &kp LS(J)       &kp EQUAL
+			&escnav NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
+			&kp TAB      &kp LS(Q)    &kp LS(X)       &kp LS(M)       &kp LS(C)       &kp LS(V)   &to DEFAULT   &kp LCTRL   &kp LALT  &none  &kp LALT &to DEFAULT   &kp LS(K)   &kp LS(P)   &kp DOT   &comques     &minusdqt    &fslhlt
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &to DEFAULT  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			>;
+		};
+		
 	};
 };
 
-#define def0 0xFF0062 // magenta
-#define onG 0x00FF00 // green
-#define sym1 0xFBFF00 // yellow
-#define num2 0x00FF00 // green
-#define nav3 0x00FFEA // blue
-#define sec4 0xFFFFFF // white
-#define qwe5 0x0051FF // dark blue
-#define fig6 0xD900FF // purple
+#define def0 0xFF0062// magenta
+#define onG 0x00FF00// green
+#define sym1 0xFBFF00// yellow
+#define num2 0x00FF00// green
+#define nav3 0x00FFEA// blue
+#define sec4 0xFFFFFF// white
+#define qwe5 0x0051FF// dark blue
+#define fig6 0xD900FF// purple
 
 / {
 	underglow-layer {
@@ -504,7 +518,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <DEFAULT>;
 		};
@@ -515,7 +529,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <SYMBOL>;
 		};
@@ -526,7 +540,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <NUMACT>;
 		};
@@ -537,7 +551,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <NAV>;
 		};
@@ -548,7 +562,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <SECRET>;
 		};
@@ -559,7 +573,7 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <QWERTY>;
 		};
@@ -570,9 +584,20 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0    					      &ug def0 &ug def0   &ug_cl def0 onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0		&ug def0 &ug def0 					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <FIGMA>;
+		};
+		caps {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <CAPLAYER>;
 		};
 	};
 };
