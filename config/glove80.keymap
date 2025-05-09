@@ -119,16 +119,8 @@
 			label = "LAYER_TAP_DANCE";
 			#binding-cells = <0>;
 			tapping-term-ms = <200>;
-			bindings = <&none>, <&to FIGMA>;
+			bindings = <&none>, <&tog FIGMA>;
 		};
-		
-		lay_td_x: tap_dance_1 {
-			compatible = "zmk,behavior-tap-dance";
-			label = "LAYER_TAP_DANCE";
-			#binding-cells = <0>;
-			tapping-term-ms = <200>;
-			bindings = <&none>, <&to DEFAULT>;
-		};7894562323**2123
 	};
 	
 	macros {
@@ -466,7 +458,7 @@
 			&none            &kp LG(K)               &kp LS(P)           &kp R          &kp T           &kp V                          &none     &kp N7    &kp N8    &kp N9     &none    &none
 			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &none                                    &kp DOT    &kp N4    &kp N5    &kp N6     &kp KP_DIVIDE     &none
 			&trans     &kp LG(Z)   &kp LG(X)   &kp LG(D)  &kp LG(C)   &kp LG(V)   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &none   &kp N0   &kp N1   &kp N2   &kp N3     &kp KP_MULTIPLY     &fslhlt
-			&trans	 &kp LG(LS(Z)) 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   			&none  &kp RET   &kp SPACE  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT  &lay_td_x
+			&trans	 &kp LG(LS(Z)) 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   			&none  &kp RET   &kp SPACE  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT  &lay_td
 			>;
 		};
 		
