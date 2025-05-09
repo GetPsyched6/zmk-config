@@ -122,7 +122,7 @@
 			bindings = <&none>, <&to FIGMA>;
 		};
 		
-		lay_td_1: tap_dance_1 {
+		lay_td_x: tap_dance_0  {
 			compatible = "zmk,behavior-tap-dance";
 			label = "LAYER_TAP_DANCE";
 			#binding-cells = <0>;
@@ -405,7 +405,7 @@
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&none            &kp EXCL           &kp AT        &kp HASH        &kp DOLLAR        &kp PERCENT                       		&kp CARET     &kp AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
 			&trans            &kp FSLH               &kp MINUS        &kp SQT        &kp DQT       &kp UNDER                     		&kp BSLH    &kp LBRC    &kp RBRC    &kp PIPE     &kp SEMI     &kp COMMA
-			&trans      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&none  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
+			&trans      &kp LT    &kp GT       &kp PLUS       &kp EQUAL     &kp QMARK   &to DEFAULT   &kp LCTRL   &kp LALT  		&to DEFAULT  &kp LALT &to NAV   	&kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT     &kp COLON    &kp DOT
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   					&none  &kp RET   &kp SPACE    	 &kp UP  &kp DOWN    &none    &none    &none
 			>;
 		};
@@ -417,7 +417,7 @@
 			&none            &none               &none           &none           &none           &none                                  &kp LPAR     &none   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
 			&none            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
 			&trans            &none               &kp LEFT        &kp C_PREV        &kp C_PP       &kp C_NEXT                                     &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-			&trans      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &kp LALT  			&none  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
+			&trans      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp RET   &kp SPACE 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
 			>;
 		};
@@ -440,7 +440,7 @@
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
 			&none            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
-			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &none     &none     &none
+			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &kp LG(LC(Q))     &none     &none
 			&trans      &none    &none       &none       &none       &none   &to DEFAULT   &kp LCTRL   &kp LALT  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &kp BSPC    &kp LCMD     &key_repeat   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp LEFT  &kp RIGHT    &none    &none    &none
 			>;
@@ -463,10 +463,10 @@
 			bindings = <
 			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&none            &none               &none           &kp LG(LA(G))     &kp LG(G)   &kp LG(BSPC)                         &kp LG(LS(K))     &kp LC(C)   &none 	&none	&none		&none
-			&none            &kp LG(K)               &kp LS(P)           &kp R          &kp T           &kp V                          &none     &kp HOME    &kp UP    &kp END     &none    &none
-			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &none                                    &none    &kp LEFT    &kp DOWN    &kp RIGHT     &none     &none
-			&trans     &kp LG(Z)   &kp LG(X)   &kp LG(D)  &kp LG(C)   &kp LG(V)   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &to DEFAULT   &none   &none   &none   &none     &none    &fslhlt
-			&trans	 &kp LG(LS(Z)) 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   			&none  &kp RET   &kp SPACE  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT  &lay_td_1
+			&none            &kp LG(K)               &kp LS(P)           &kp R          &kp T           &kp V                          &none     &kp N7    &kp N8    &kp N9     &none    &none
+			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &none                                    &kp DOT    &kp N4    &kp N5    &kp N6     &kp KP_DIVIDE     &none
+			&trans     &kp LG(Z)   &kp LG(X)   &kp LG(D)  &kp LG(C)   &kp LG(V)   &to DEFAULT   &kp LCTRL   &kp LALT  			&to DEFAULT  &kp LALT &kp N0   &kp N1   &kp N2   &kp N3   &kp KP_MULTIPLY     &none    &fslhlt
+			&trans	 &kp LG(LS(Z)) 		&none     &kp LEFT   		 &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   			&none  &kp RET   &kp SPACE  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT  &lay_td_x
 			>;
 		};
 		
@@ -499,7 +499,7 @@
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp LS(B)   &kp LS(L)       &kp LS(D)       &hml LSHIFT LS(W)       &kp LS(Z)                                                                      &kp UNDER    &hmr LSHIFT LS(F)   &kp LS(O)       &kp LS(U)       &kp LS(J)       &kp EQUAL
 			&escnav NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
-			&kp TAB      &kp LS(Q)    &kp LS(X)       &kp LS(M)       &kp LS(C)       &kp LS(V)   &to DEFAULT   &kp LCTRL   &kp LALT  &none  &kp LALT &to DEFAULT   &kp LS(K)   &kp LS(P)   &kp DOT   &comques     &minusdqt    &fslhlt
+			&kp TAB      &kp LS(Q)    &kp LS(X)       &kp LS(M)       &kp LS(C)       &kp LS(V)   &to DEFAULT   &kp LCTRL   &kp LALT  &none  &kp LALT &none   &kp LS(K)   &kp LS(P)   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &to DEFAULT  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
