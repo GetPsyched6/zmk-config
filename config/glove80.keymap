@@ -29,6 +29,11 @@
 #define FACTORY_TEST 8
 #define CAPLAYER 9
 
+&sl {
+    release-after-ms = <10000>;
+};
+
+
 / {
 	behaviors {
 		// For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -82,7 +87,7 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			tapping-term-ms = <200>;
+			tapping-term-ms = <150>;
 			bindings = <&mo>, <&to>;
 		};
 		
@@ -381,11 +386,11 @@
 		// DONE L0
 		default_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&kp C_BRI_DN         &kp C_BRI_UP     &kp C_MUTE     &cmdpal      &emoji                                                            &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
-			&kp TAB      &kp Q    &kp X       &kp M       &kp C       &kp V   &to SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
+			&kp TAB      &kp Q    &kp X       &kp M       &kp C       &kp V   &sl SYMBOL   &kp LCTRL   &kp LALT  &none  &kp LALT &to NUMACT   &kp K   &kp P   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &key_repeat   &capslayhold SECRET CAPLAYER  &kp RET   &kp SPACE   &kp UP  &kp DOWN    &kp LBKT    &kp RBKT &lay_td
 			>;
 		};
@@ -393,7 +398,7 @@
 		// DONE L1 
 		symbol_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&none            &kp EXCL           &kp AT        &kp HASH        &kp DOLLAR        &kp PERCENT                       		&kp CARET     &kp AMPERSAND    &kp STAR    &kp GRAVE     &kp TILDE    &none
 			&trans            &kp FSLH               &kp MINUS        &kp SQT        &kp DQT       &kp UNDER                     		&kp BSLH    &kp LBRC    &kp RBRC    &kp PIPE     &kp SEMI     &kp COMMA
@@ -405,7 +410,7 @@
 		// DONE L2
 		num_act_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &none           &none           &none                                  &kp LPAR     &none   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
 			&none            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
 			&trans            &none               &kp LEFT        &kp C_PREV        &kp C_PP       &kp C_NEXT                                     &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
@@ -417,7 +422,7 @@
 		// DONE L3
 		nav_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &reddit           &goog           &yt           &none                         &dskleft     &dskrght   &none 	&none	&none		&xtab
 			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &none     &kp HOME    &kp UP    &kp END     &none    &none
 			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &none    &kp LEFT    &kp DOWN    &kp RIGHT     &none     &lastapp
@@ -429,7 +434,7 @@
 		// DONE L4
 		secrets_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
 			&none            &none               &none           &none          &none           &none                          &none     &none    &none    &none     &none    &none
 			&trans            &none               &none        &none        &none       &none                                    &to DEFAULT    &macos    &none    &kp LG(LC(Q))     &none     &none
@@ -441,7 +446,7 @@
 		// DONE L5
 		qwerty_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp EQUAL
 			&escnav NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
@@ -453,7 +458,7 @@
 		// DONE L6
 		figma_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                 &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &kp LG(LA(G))     &kp LG(G)   &kp LG(BSPC)                         &kp LG(LS(K))     &kp LC(C)   &none 	&none	&none		&none
 			&none            &kp LG(K)               &kp LS(P)           &kp R          &kp T           &kp V                          &none     &kp N7    &kp N8    &kp N9     &none    &none
 			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &none                                    &kp DOT    &kp N4    &kp N5    &kp N6     &kp KP_DIVIDE     &none
@@ -487,7 +492,7 @@
 		// DONE L9
 		caps_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP   &cmdpal      &emoji      &kp C_MUTE                                                      &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp LS(B)   &kp LS(L)       &kp LS(D)       &hml LSHIFT LS(W)       &kp LS(Z)                                                                      &kp UNDER    &hmr LSHIFT LS(F)   &kp LS(O)       &kp LS(U)       &kp LS(J)       &kp EQUAL
 			&escnav NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
@@ -598,6 +603,17 @@
 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <CAPLAYER>;
+		};
+		magic {
+			bindings = <
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			>;
+			layer-id = <MAGIC>;
 		};
 	};
 };
