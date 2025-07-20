@@ -35,3 +35,11 @@ To locate your firmware files and reflash your Glove80...
 6. Flash the firmware to Glove80 according to the user documentation on the official Glove80 Glove80 Support website (linked above)
 
 Your keyboard is now ready to use.
+
+![alt text](https://docs.moergo.com/glove80-user-guide/images/bootloader-zmk-method.png)
+
+![alt text](https://docs.moergo.com/glove80-user-guide/images/configuration-factory-reset.png)
+
+switch off both
+
+hold magic + 3, then switch on and hold both keys for 5 seconds. Then switch off. Do the same for the right.
