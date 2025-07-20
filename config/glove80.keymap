@@ -504,7 +504,7 @@
 			&kp BSLH        &kp LS(B)   &kp LS(L)       &kp LS(D)       &hml LSHIFT LS(W)       &kp LS(Z)                                                                      &kp UNDER    &hmr LSHIFT LS(F)   &kp LS(O)       &kp LS(U)       &kp LS(J)       &kp EQUAL
 			&escnav NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
 			&kp TAB      &kp LS(Q)    &kp LS(X)       &kp LS(M)       &kp LS(C)       &kp LS(V)   &to DEFAULT   &trans   &trans          &none  &trans &none   &kp LS(K)   &kp LS(P)   &kp DOT   &comques     &minusdqt    &fslhlt
-			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT      &trans    &&trans     &trans          &to DEFAULT  &trans   &trans    &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
+			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT      &trans    &trans     &trans          &to DEFAULT  &trans   &trans    &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
 		
