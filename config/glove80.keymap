@@ -525,6 +525,7 @@
 #define grn 0x00FF00// green
 #define ylw 0xFBFF00// yellow
 #define blu 0x00FFEA// blue
+#define blk 0x000000// black
 
 
 
@@ -579,9 +580,9 @@
 			bindings = <
 			&ug sec4 &ug sec4 &ug sec4 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug sec4       &ug sec4     &ug sec4
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug blu    &ug blu &ug blu    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug blu    &ug blu &ug blu &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug blu    &ug blu &ug blu &ug blu &ug def0 &ug def0 &ug def0 			&ug ylw &ug ylw &ug red &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug sec4 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <SECRET>;
