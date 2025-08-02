@@ -3,7 +3,7 @@
 * Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark 16
+* Version: Mark 17
 */
 
 #include <behaviors.dtsi>
@@ -30,7 +30,7 @@
 #define CAPLAYER 9
 
 &sl {
-    release-after-ms = <10000>;
+	release-after-ms = <10000>;
 };
 
 
@@ -118,7 +118,7 @@
 			bindings = <&kp FSLH>, <&kp LT>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-
+		
 		cmda: command_a {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
@@ -356,6 +356,23 @@
 		
 	};
 	
+	combos {
+		compatible = "zmk,combos";
+		combo_lshft {
+			timeout-ms = <50>;
+			key-positions = <25 26>;
+			bindings = <&kp LSHFT>;
+			require-prior-idle-ms = <150>;
+		};
+
+		combo_rshft {
+			timeout-ms = <50>;
+			key-positions = <29 30>;
+			bindings = <&kp RSHFT>;
+			require-prior-idle-ms = <150>;
+		};
+	};
+	
 	keymap {
 		compatible = "zmk,keymap";
 		
@@ -521,7 +538,7 @@
 #define qwe5 0x0051FF// dark blue
 #define fig6 0xD900FF// purple
 
-#define red 0xff0000 //red
+#define red 0xff0000//red
 #define grn 0x00FF00// green
 #define ylw 0xFBFF00// yellow
 #define blu 0x00FFEA// blue
