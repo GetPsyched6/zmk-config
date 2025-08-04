@@ -460,9 +460,9 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none           &none           &none           &none           &none                         &to QWERTY     &none   &none 	&none	&none		&none
-			&none            &none          &kp LC(N7)           &kp LC(N8)          &kp LC(N9)           &none                          &none     &none    &none    &none     &none    &none
+			&none            &none          &kp LC(N7)           &kp LC(N8)          &kp LC(N9)           &kp LC(N0)                          &none     &none    &none    &none     &none    &none
 			&trans            &none        &kp LC(N4)        &kp LC(N5)        &kp LC(N6)       &none                                    &to DEFAULT    &macos    &none    &kp LG(LC(Q))     &none     &none
-			&trans      &none    &kp LC(N1)       &kp LC(N2)       &kp LC(N3)       &kp LC(N0)   &to DEFAULT   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
+			&trans      &none    &kp LC(N1)       &kp LC(N2)       &kp LC(N3)       &none   &to DEFAULT   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &none   &none   &none   &none     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &trans    &trans     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &kp LEFT  &kp RIGHT    &none    &none    &none
 			>;
 		};
@@ -485,7 +485,7 @@
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &kp LG(LA(G))     &kp LG(G)   &kp LG(BSPC)                         &kp LG(LS(K))     &kp LC(C)   &none 	&none	&none		&none
 			&none            &kp LG(K)               &kp LS(P)           &kp R          &kp T           &kp V                          &none     &kp N7    &kp N8    &kp N9     &none    &none
-			&trans            &kp LCTRL              &kp LALT       &kp LGUI      &kp LSHIFT       &kp LALT                                    &kp DOT    &kp N4    &kp N5    &kp N6     &kp KP_DIVIDE     &none
+			&trans            &kp LCTRL              &kp LALT       &kp LSHIFT      &kp LGUI       &kp LALT                                    &kp DOT    &kp N4    &kp N5    &kp N6     &kp KP_DIVIDE     &none
 			&trans     &kp LG(Z)   &kp LG(X)   &kp LG(D)  &kp LG(C)   &kp LG(V)   &to DEFAULT   &trans   &trans  			&to DEFAULT  &trans &none   &kp N0   &kp N1   &kp N2   &kp N3     &kp KP_MULTIPLY     &fslhlt
 			&trans	 &kp LG(LS(Z)) 		&kp LG(A)     &kp LEFT   		 &kp RIGHT           &kp BSPC    &trans     &trans   			&trans  &trans   &trans  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT  &lay_td
 			>;
@@ -597,9 +597,9 @@
 			bindings = <
 			&ug sec4 &ug sec4 &ug sec4 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug sec4       &ug sec4     &ug sec4
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug sec4                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug sec4 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <SECRET>;
