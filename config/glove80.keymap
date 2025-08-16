@@ -3,7 +3,7 @@
 * Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark 18
+* Version: Mark 19
 */
 
 #include <behaviors.dtsi>
@@ -311,7 +311,7 @@
 			;
 		};
 		
-		numbase: num_to_base_on_space {
+		spacebase: to_base_on_space {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
@@ -320,6 +320,15 @@
 			;
 		};
 		
+		enterbase: to_base_on_enter {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&to DEFAULT>
+			, <&kp RET>
+			;
+		};
+
 		macos: macOS {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -420,7 +429,7 @@
 		// DONE L0
 		default_layer {
 			bindings = <
-			&kp C_BRI_DN         &kp C_BRI_UP     &kp C_MUTE     &cmdpal      &emoji                                                            &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
+			&kp C_BRI_DN         &kp C_BRI_UP     &kp C_MUTE     &emoji     &cmdpal                                                           &kp C_PREV  &kp C_PP      &kp C_NEXT      &kp C_VOL_DN      &kp C_VOL_UP
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &cmda                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp B    &kp L       &kp D       &hml LSHIFT W       &kp Z                                                                      &sqtund    &hmr LSHIFT F   &kp O       &kp U       &kp J       &kp EQUAL
 			&escnav NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                      &kp Y   &kp H   &kp A    &kp E      &kp I    &kp SEMI
@@ -448,8 +457,8 @@
 			&none            &none               &none           &none           &none           &none                                  &kp LPAR     &none   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
 			&none            &none               &none           &kp C_VOL_DN   &kp C_VOL_UP     &kp C_MUTE                                       &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &none
 			&trans            &none               &kp LEFT        &kp C_PREV        &kp C_PP       &kp C_NEXT                                     &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-			&trans      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &trans   &trans  			&to DEFAULT  &trans &to NAV  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
-			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &trans    &trans     &trans   						&trans  &trans   &numbase 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
+			&trans      &none    &none       &kp C_BRI_DN       &kp C_BRI_UP       &ss   &to DEFAULT   &trans   &trans  			&to DEFAULT  &trans &none  			 &kp COMMA   &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_ENTER    &none
+			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &trans    &trans     &trans   						&trans  &enterbase   &spacebase 		    &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &none
 			>;
 		};
 		
