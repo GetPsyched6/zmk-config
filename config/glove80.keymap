@@ -3,7 +3,7 @@
 * Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark 19
+* Version: Mark 20
 */
 
 #include <behaviors.dtsi>
@@ -466,8 +466,8 @@
 		nav_layer {
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
-			&none            &none               &reddit           &goog           &yt           &none                            &none   &none   &none 	&none	&none		&xtab
-			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &none     &kp HOME    &kp UP    &kp END     &none    &none
+			&none            &none               &reddit           &goog           &yt           &none                                                            &xtab    &none     &none 	   &none	      &none	    	&none
+			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &kp LG(TAB)     &kp LG(LEFT)    &kp UP    &kp LG(RIGHT)     &none    &none
 			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &dskleft    &kp LEFT    &kp DOWN    &kp RIGHT     &dskrght     &lastapp
 			&trans      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP       &none   &to DEFAULT   &trans   &trans  			&to DEFAULT  &trans &none   &newtab   &prevtab   &nxttab   &omni     &none    &none
 			&trans	 &none 		&none     &none   		 &none           &trans    &trans     &trans   						&trans  &trans   &trans     &back  &fwd    &none    &none    &to SECRET
