@@ -24,9 +24,9 @@
 #define NAV 3
 #define SECRET 4
 #define QWERTY 5
-#define MAGIC 7
-#define FACTORY_TEST 8
-#define CAPLAYER 9
+#define MAGIC 6
+#define FACTORY_TEST 7
+#define CAPLAYER 8
 
 // * Sticky Layer auto release (I think)
 &sl {
@@ -457,7 +457,7 @@
 			>;
 		};
 		
-		// DONE L9
+		// DONE L8
 		caps_layer {
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
