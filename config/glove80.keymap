@@ -429,7 +429,7 @@
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &cmda                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp Q    &kp W       &kp E       &hml LSHIFT R       &kp T                                                                      &kp Y   &hmr LSHIFT U   &kp I       &kp O       &kp P       &kp EQUAL
-			&escnav NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
+			&holdtapkey NAV ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
 			&kp TAB      &hml LSHIFT Z    &kp X       &kp C       &kp V       &kp B   &to DEFAULT   &trans   &trans     &to DEFAULT  &trans &none   &kp N   &kp M   &kp DOT   &comques     &minusdqt    &fslhlt
 			&magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT     &trans    &trans     &trans            &trans  &trans   &trans  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
@@ -463,7 +463,7 @@
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&kp GRAVE      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp BSLH        &kp LS(B)   &kp LS(L)       &kp LS(D)       &hml LSHIFT LS(W)       &kp LS(Z)                                                                      &kp UNDER    &hmr LSHIFT LS(F)   &kp LS(O)       &kp LS(U)       &kp LS(J)       &none
-			&escnav NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
+			&holdtapkey NAV ESC      &kp LS(N)    &kp LS(R)       &kp LS(T)       &kp LS(S)       &kp LS(G)                                                                      &kp LS(Y)   &kp LS(H)   &kp LS(A)    &kp LS(E)      &kp LS(I)    &kp SEMI
 			&kp TAB      &kp LS(Q)    &kp LS(X)       &kp LS(M)       &kp LS(C)       &kp LS(V)   &to DEFAULT   &trans   &trans          &none  &trans &none   &kp LS(K)   &kp LS(P)   &kp DOT   &comques     &minusdqt    &none
 			&magic MAGIC 0 &trans &trans     &kp LEFT    &kp RIGHT      &trans    &trans     &trans          &to DEFAULT  &trans   &trans    &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
