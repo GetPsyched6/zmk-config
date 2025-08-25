@@ -17,7 +17,7 @@
 
 #define HYPER LC(LS(LG(LALT)))
 
-// layers
+// ? layers (The numbering HAS to be in order)
 #define DEFAULT 0
 #define SYMBOL 1
 #define NUMACT 2
@@ -382,7 +382,7 @@
 			&none      &none   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &none      &none
 			&none            &kp N1           &kp AT        &kp HASH        &kp DOLLAR        &kp PERCENT                       		&kp CARET     &kp AMPERSAND    &kp STAR    &kp EXCL     &kp N0    &none
 			&trans            &kp LT               &kp LBKT        &kp LPAR        &kp LBRC       &kp DQT                     		&kp QMARK    &kp RBRC    &kp RPAR    &kp RBKT     &kp GT     &none
-			&trans      &kp GRAVE    &kp PIPE       &kp PLUS       &kp EQUAL     &kp FSLH   &to DEFAULT   &trans   &trans  		&to DEFAULT  &trans &to NAV   	&kp BSLH   &kp MINUS   &kp UNDER   &kp COLON  &kp TILDE    &none
+			&trans      &kp GRAVE    &kp UNDER       &kp PLUS       &kp EQUAL     &kp FSLH   &to DEFAULT   &trans   &trans  		&to DEFAULT  &trans &to NAV   	&kp BSLH   &kp MINUS   &kp PIPE   &kp COLON  &kp TILDE    &none
 			&trans	 &none 		&none     &kp LEFT   		 &kp RIGHT           &trans    &trans    &trans   					&trans  &trans   &trans    	 &kp UP  &kp DOWN    &none    &none    &none
 			>;
 		};
