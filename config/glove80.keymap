@@ -437,8 +437,8 @@
 			&none            &none           &none           &none           &none           &none                                          &xtab     &none   &none 	&none	&none		&none
 			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastapp     &prevtab    &nxttab    &none     &none    &none
 			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &none     &omni     &none
-			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &kp LC(V)   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &kp SPACE   &kp BSPC   &dskrght     &none    &none
-			&trans	 &trans 		&trans     &trans   &trans              &trans    &trans     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
+			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &trans   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &kp SPACE   &kp BSPC   &dskrght     &none    &none
+			&trans	 &trans 		&trans     &trans   &trans              &kp LC(V)    &trans     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
 			>;
 		};
 		
