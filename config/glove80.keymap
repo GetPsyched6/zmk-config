@@ -366,7 +366,7 @@
 			&kp GRAVE        &kp B    &kp L       &kp D       &hrm LSHIFT W       &kp Z                                                                      &sqtund    &hrm LSHIFT F   &kp O       &kp U       &kp J       &none
 			&holdtapkey NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                               &kp Y   &kp H   &kp A    &kp E      &kp I    &holdtapkey NAV SEMI
 			&kp TAB      &kp Q    &holdtapkey_q HRMACT X       &kp M       &kp C       &kp V   &holdtaplaystick SYMBOL SYMBOL   &kp LCTRL   &none         &none  &kp LALT  &to NUMACT          &kp K   &kp P   &kp DOT   &comques     &minusdqt    &none
-			&magic MAGIC 0 &kp BSPC &kp TAB     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &kp LALT         &holdtaplay SECRET CAPLAYER  &kp RET   &kp SPACE         &kp UP  &kp DOWN    &kp SPACE    &kp RET &none
+			&magic MAGIC 0 &trans &kp TAB     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &kp LALT         &holdtaplay SECRET CAPLAYER  &kp RET   &kp SPACE         &kp UP  &kp DOWN    &trans    &trans &none
 			>;
 		};
 		
@@ -565,8 +565,8 @@
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug sec4                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug sec4 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug sec4 &ug sec4 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <SECRET>;
 		};
@@ -574,10 +574,10 @@
 			bindings = <
 			&ug nav3 &ug def0 &ug nav3 &ug def0 &ug nav3                                                                             &ug nav3     &ug def0        &ug nav3       &ug def0     &ug nav3
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug sec4                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug nav3 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug nav3 &ug nav3 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
 			>;
 			layer-id = <HRMACT>;
 		};
