@@ -328,21 +328,23 @@
 	// * Chord Layer Switch
 	combos {
 		compatible = "zmk,combos";
-		combo_l_to_def {
+		combo_l_goto_def {
 			timeout-ms = <50>;
 			key-positions = <25 26>;
 			bindings = <&to DEFAULT>;
+			layers = <1 2 3 4 5 6 7 8>;
 			require-prior-idle-ms = <150>;
 		};
 		
-		combo_r_to_def {
+		combo_r_goto_def {
 			timeout-ms = <50>;
 			key-positions = <29 30>;
 			bindings = <&to DEFAULT>;
+			layers = <1 2 3 4 5 6 7 8>;
 			require-prior-idle-ms = <150>;
 		};
 
-		combo_l_on_def {
+		combo_l_from_def {
 			timeout-ms = <50>;
 			key-positions = <25 26>;
 			bindings = <&sl SYMBOL>;
@@ -350,7 +352,7 @@
 			require-prior-idle-ms = <150>;
 		};
 		
-		combo_r_on_def {
+		combo_r_from_def {
 			timeout-ms = <50>;
 			key-positions = <29 30>;
 			bindings = <&to NUMACT>;
