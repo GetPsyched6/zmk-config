@@ -383,7 +383,7 @@
 			&none      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &none
 			&kp GRAVE        &kp B    &kp L       &kp D       &hrm LSHIFT W       &kp Z                                                                      &sqtund    &hrm LSHIFT F   &kp O       &kp U       &kp J       &none
 			&holdtapkey NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                               &kp Y   &kp H   &kp A    &kp E      &kp I    &holdtapkey NAV SEMI
-			&kp TAB      &kp Q    &holdtapkey_q HRMACT X       &kp M       &kp C       &kp V   &holdtaplaystick SYMBOL SYMBOL   &kp LCTRL   &none         &none  &kp LALT  &to NUMACT          &kp K   &kp P   &kp DOT   &comques     &minusdqt    &none
+			&kp TAB      &kp Q    &holdtapkey_q HRMACT X       &kp M       &kp C       &kp V   &holdtaplaystick SYMBOL SYMBOL   &kp LCTRL   &none         &none  &kp LALT  &to NUMACT          &kp K   &kp P   &kp DOT   &holdtapkey_q HRMACT &comques     &minusdqt    &none
 			&magic MAGIC 0 &trans &kp TAB     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &kp LALT         &holdtaplay SECRET CAPLAYER  &kp RET   &kp SPACE         &kp UP  &kp DOWN    &trans    &trans &none
 			>;
 		};
@@ -452,7 +452,7 @@
 		homerowmod_act_layer {
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
-			&none            &none           &none           &none           &none           &none                                          &xtab     &none   &none 	&none	&none		&none
+			&none            &none           &none           &none           &none           &none                                          &xtab     &kp LA(Y)   &none 	&none	&none		&none
 			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastapp     &prevtab    &nxttab    &none     &none    &none
 			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &none
 			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &trans   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &kp SPACE   &kp BSPC   &dskrght     &none    &none
