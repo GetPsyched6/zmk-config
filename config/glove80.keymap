@@ -512,11 +512,11 @@
 #define blu 0x00FFEA// blue
 #define blk 0x000000// black
 
-// * Orange theming
-#define def0 0xFF5E00// main oraage
-#define sym1 0xD900FF// purple
-#define num2 0x00FFEA// blue
-#define nav3 0xFFC800// yellow
+// // * Orange theming
+// #define def0 0xFF5E00// main oraage
+// #define sym1 0xD900FF// purple
+// #define num2 0x00FFEA// blue
+// #define nav3 0xFFC800// yellow
 
 // // * Blue theming
 // #define def0 0x006EFF// main blue
@@ -524,11 +524,11 @@
 // #define num2 0x00FF00// green
 // #define nav3 0x00FFEA// blue
 
-// // * Magenta theming
-// #define def0 0xFF0062// main magenta
-// #define sym1 0xFFC800// yellow
-// #define num2 0x00FFEA// blue
-// #define nav3 0xD900FF// purple
+// * Magenta theming
+#define def0 0xFF0062// main magenta
+#define sym1 0xFFC800// yellow
+#define num2 0x00FFEA// blue
+#define nav3 0xD900FF// purple
 
 / {
 	underglow-layer {
