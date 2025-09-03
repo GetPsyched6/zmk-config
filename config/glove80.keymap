@@ -174,6 +174,16 @@
 			;
 		};
 		
+		lastspapp: last_app_in_space {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_press &kp LCMD>
+			, <&macro_tap &kp LALT>
+			, <&macro_release &kp LCMD>
+			;
+		};
+		
 		cmdpal: command_pallete {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -417,7 +427,7 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &none           &none           &none                                                            &xtab    &none     &none 	   &none	      &none	    	&none
-			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &kp LA(TAB)     &kp LG(LEFT)    &kp UP    &kp LG(RIGHT)     &none    &none
+			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &lastspapp     &kp LG(LEFT)    &kp UP    &kp LG(RIGHT)     &none    &none
 			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &newtab    &kp LEFT    &kp DOWN    &kp RIGHT     &omni     &lastapp
 			&trans      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP  &none   		&to DEFAULT &trans   &trans  				&to DEFAULT  &trans &none   	&dskleft   &prevtab   &nxttab   &dskrght     &none    &none
 			&trans	 &trans 		&trans     &kp PG_UP    &kp PG_DN          				 &trans    &trans     &trans   								&trans  &trans   &trans    		 &back  &fwd    &trans    &trans    &to SECRET
@@ -453,7 +463,7 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none           &none           &none           &none           &none                                          &xtab     &kp LA(Y)   &kp LG(RET) 	&none	&none		&none
-			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &kp LA(TAB)     &kp SPACE    &kp BSPC    &kp LG(BSPC)     &none    &none
+			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastspapp     &kp SPACE    &kp BSPC    &kp LG(BSPC)     &none    &none
 			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &lastapp
 			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &trans   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &prevtab   &nxttab   &dskrght     &none    &none
 			&trans	 &trans 		&trans     &trans   &trans              &kp LC(V)    &trans     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
