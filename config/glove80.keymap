@@ -174,16 +174,6 @@
 			;
 		};
 		
-		lastspapp: last_app_in_space {
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings
-			= <&macro_press &kp LCTRL>
-			, <&macro_tap &kp G>
-			, <&macro_release &kp LCTRL>
-			;
-		};
-		
 		cmdpal: command_pallete {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -405,7 +395,7 @@
 			&none      &none   &kp N2      &kp N3      &kp N4      &kp N5                                                      		&kp N6  &kp N7  &kp N8      &kp N9      &none      &none
 			&none            &kp N1           &kp AT        &kp HASH        &kp DOLLAR        &kp PERCENT                       		&kp CARET     &kp AMPERSAND    &kp STAR    &kp EXCL     &kp N0    &none
 			&trans            &kp LT               &kp LBKT        &kp LPAR        &kp LBRC       &kp DQT                     		&kp QMARK    &kp RBRC    &kp RPAR    &kp RBKT     &kp GT     &none
-			&trans      &kp GRAVE    &kp UNDER       &kp PLUS       &kp EQUAL     &kp FSLH   &to DEFAULT   &trans   &trans  		&to DEFAULT  &trans &to NAV   	&kp BSLH   &kp MINUS   &kp PIPE   &kp COLON  &kp TILDE    &none
+			&trans      &kp GRAVE    &kp UNDER       &kp PIPE       &kp MINUS     &kp FSLH   &to DEFAULT   &trans   &trans  		&to DEFAULT  &trans &to NAV   	&kp BSLH   &kp EQUAL   &kp PLUS   &kp COLON  &kp TILDE    &none
 			&trans	 &trans 		&trans     &kp LEFT   		 &kp RIGHT           &trans    &trans    &trans   					&trans  &trans   &trans    	 &kp UP  &kp DOWN    &trans    &trans    &none
 			>;
 		};
@@ -427,8 +417,8 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none               &none           &none           &none           &none                                                            &xtab    &none     &none 	   &none	      &none	    	&none
-			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &lastspapp     &kp LG(LEFT)    &kp UP    &kp LG(RIGHT)     &none    &none
-			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &newtab    &kp LEFT    &kp DOWN    &kp RIGHT     &omni     &lastapp
+			&none            &none               &msc SCRL_RIGHT           &mmv MOVE_UP          &msc SCRL_LEFT           &mkp RCLK                          &lastapp     &kp LG(LEFT)    &kp UP    &kp LG(RIGHT)     &none    &none
+			&trans            &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN        &mmv MOVE_RIGHT       &mkp LCLK                                   &newtab    &kp LEFT    &kp DOWN    &kp RIGHT     &omni     &none
 			&trans      &none    &none       &msc SCRL_DOWN       &msc SCRL_UP  &none   		&to DEFAULT &trans   &trans  				&to DEFAULT  &trans &none   	&dskleft   &prevtab   &nxttab   &dskrght     &none    &none
 			&trans	 &trans 		&trans     &kp PG_UP    &kp PG_DN          				 &trans    &trans     &trans   								&trans  &trans   &trans    		 &back  &fwd    &trans    &trans    &to SECRET
 			>;
@@ -463,10 +453,10 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none           &none           &none           &none           &none                                          &xtab     &kp LA(Y)   &kp LG(RET) 	&none	&none		&none
-			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastspapp     &kp SPACE    &kp BSPC    &kp LG(BSPC)     &none    &none
-			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &lastapp
+			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastapp     &kp TAB    &kp LG(LEFT)    &kp LG(RIGHT)     &none    &none
+			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &none
 			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &trans   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &prevtab   &nxttab   &dskrght     &none    &none
-			&trans	 &trans 		&trans     &trans   &trans              &kp LC(V)    &trans     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
+			&trans	 &trans 		&trans     &trans   &trans              &kp LC(V)    &kp LA(BSPC)     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
 			>;
 		};
 		
@@ -521,6 +511,7 @@
 #define ylw 0xFBFF00// yellow
 #define blu 0x00FFEA// blue
 #define blk 0x000000// black
+#define prp 0xD900FF// purple
 
 // // * Orange theming
 // #define def0 0xFF5E00// main oraage
@@ -529,16 +520,16 @@
 // #define nav3 0xFFC800// yellow
 
 // // * Blue theming
-#define def0 0x006EFF// main blue
-#define sym1 0xD900FF// purple
-#define num2 0x00FF00// green
-#define nav3 0x00FFEA// blue
+// #define def0 0x006EFF// main blue
+// #define sym1 0x2900FF// red
+// #define num2 0x00FF00// green
+// #define nav3 0x00FFEA// blue
 
 // * Magenta theming
-// #define def0 0xFF0062// main magenta
-// #define sym1 0xFFC800// yellow
-// #define num2 0x00FFEA// blue
-// #define nav3 0xD900FF// purple
+#define def0 0xFF0062// main magenta
+#define sym1 0xFFC800// yellow
+#define num2 0x00FFEA// blue
+#define nav3 0xD900FF// purple
 
 / {
 	underglow-layer {
@@ -611,7 +602,7 @@
 		};
 		qwerty {
 			bindings = <
-			&ug qwe5 &ug qwe5 &ug qwe5 &ug qwe5 &ug qwe5                                                                             &ug qwe5     &ug qwe5        &ug qwe5       &ug qwe5     &ug qwe5
+			&ug qwe5 &ug prp &ug grn &ug qwe5 &ug prp                                                                             &ug grn     &ug qwe5        &ug prp       &ug grn     &ug qwe5
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
 			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
