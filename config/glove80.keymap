@@ -3,7 +3,7 @@
 * Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark XXIV - 24
+* Version: Mark XXV - 25
 */
 
 #include <behaviors.dtsi>
@@ -453,8 +453,8 @@
 			bindings = <
 			&trans         &trans   &trans      &trans      &trans                                                								     &trans  &trans      &trans      &trans      &trans
 			&none            &none           &none           &none           &none           &none                                          &xtab     &kp LA(Y)   &kp LG(RET) 	&none	&none		&none
-			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastapp     &kp TAB    &kp LG(LEFT)    &kp LG(RIGHT)     &none    &none
-			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &none
+			&none            &none          &none           &none          &kp LG(FSLH)           &kp LC(GRAVE)                          &lastapp     &kp LG(LEFT)    &kp LG(LEFT)    &kp LG(RIGHT)     &none    &none
+			&trans            &none        &none        &kp LG(LS(Z))        &kp LG(Z)       &kp LG(A)                                    &newtab    &kp RET    &kp LS(RET)    &kp LG(RET)     &omni     &kp TAB
 			&trans      &none    &none       &kp LG(X)       &kp LG(C)       &kp LG(V)   &trans   &trans   &trans  			&kp C_PREV  &kp C_NEXT &kp C_PP   &dskleft   &prevtab   &nxttab   &dskrght     &none    &none
 			&trans	 &trans 		&trans     &trans   &trans              &kp LC(V)    &kp LA(BSPC)     &trans   						&none  &kp C_VOL_DN   &kp C_VOL_UP     &back  &fwd    &trans    &trans    &none
 			>;
