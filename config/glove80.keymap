@@ -514,10 +514,10 @@
 #define prp 0xD900FF// purple
 
 // // * Orange theming
-// #define def0 0xFF5E00// main oraage
-// #define sym1 0xD900FF// purple
-// #define num2 0x00FFEA// blue
-// #define nav3 0xFFC800// yellow
+#define def0 0xFF5E00// main oraage
+#define sym1 0xD900FF// purple
+#define num2 0x00FFEA// blue
+#define nav3 0xFFC800// yellow
 
 // // * Blue theming
 // #define def0 0x006EFF// main blue
@@ -526,10 +526,10 @@
 // #define nav3 0x00FFEA// blue
 
 // * Magenta theming
-#define def0 0xFF0062// main magenta
-#define sym1 0xFFC800// yellow
-#define num2 0x00FFEA// blue
-#define nav3 0xD900FF// purple
+// #define def0 0xFF0062// main magenta
+// #define sym1 0xFFC800// yellow
+// #define num2 0x00FFEA// blue
+// #define nav3 0xD900FF// purple
 
 / {
 	underglow-layer {
