@@ -547,7 +547,7 @@
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
-			>
+			>;
 			layer-id = <DEFAULT>;
 		};
 		symbol {
