@@ -521,9 +521,9 @@
 
 // // * Blue theming
 #define def0 0x006EFF// main blue
-#define sym1 0x2900FF// red
-#define num2 0x00FF00// green
-#define nav3 0x00FFEA// blue
+// #define sym1 0x2900FF// dark blue
+// #define num2 0x00FF00// green
+// #define nav3 0x00FFEA// blue
 
 // * Magenta theming
 // #define def0 0xFF0062// main magenta
@@ -533,8 +533,11 @@
 
 // * Trans theming
 #define trblue 0x5BCEFA// trans blue
-#define trpink 0xFF67AB// trans pink
+#define trpink 0xFF519F// trans pink
 #define trwhit 0xFFFFFF// trans white
+#define sym1 0x2900FF// dark blue
+#define num2 0x00FF00// green
+#define nav3 0xFFC800// yellow
 
 / {
 	underglow-layer {
@@ -601,7 +604,7 @@
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                                 &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                                 &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug nav3 &ug nav3 &ug blk &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
-			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug def0 &ug grn &ug grn             &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug grn &ug grn           &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <HRMACT>;
 		};
