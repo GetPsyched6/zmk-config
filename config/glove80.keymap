@@ -520,20 +520,20 @@
 // #define nav3 0xFFC800// yellow
 
 // // * Blue theming
-// #define def0 0x006EFF// main blue
-// #define sym1 0x2900FF// red
-// #define num2 0x00FF00// green
-// #define nav3 0x00FFEA// blue
+#define def0 0x006EFF// main blue
+#define sym1 0x2900FF// red
+#define num2 0x00FF00// green
+#define nav3 0x00FFEA// blue
 
 // * Magenta theming
-#define def0 0xFF0062// main magenta
-#define sym1 0xFFC800// yellow
-#define num2 0x00FFEA// blue
-#define nav3 0xD900FF// purple
+// #define def0 0xFF0062// main magenta
+// #define sym1 0xFFC800// yellow
+// #define num2 0x00FFEA// blue
+// #define nav3 0xD900FF// purple
 
 // * Trans theming
 #define trblue 0x5BCEFA// trans blue
-#define trpink 0xFF839C// trans pink
+#define trpink 0xFF67AB// trans pink
 #define trwhit 0xFFFFFF// trans white
 
 / {
