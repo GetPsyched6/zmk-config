@@ -3,7 +3,7 @@
 * Copyright (c) 2025 Roshin Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark XXV - 25
+* Version: Mark XXVI - 26
 */
 
 #include <behaviors.dtsi>
@@ -514,10 +514,10 @@
 #define prp 0xD900FF// purple
 
 // // * Orange theming
-#define def0 0xFF5E00// main oraage
-#define sym1 0xD900FF// purple
-#define num2 0x00FFEA// blue
-#define nav3 0xFFC800// yellow
+// #define def0 0xFF5E00// main oraage
+// #define sym1 0xD900FF// purple
+// #define num2 0x00FFEA// blue
+// #define nav3 0xFFC800// yellow
 
 // // * Blue theming
 // #define def0 0x006EFF// main blue
@@ -526,112 +526,218 @@
 // #define nav3 0x00FFEA// blue
 
 // * Magenta theming
-// #define def0 0xFF0062// main magenta
-// #define sym1 0xFFC800// yellow
-// #define num2 0x00FFEA// blue
-// #define nav3 0xD900FF// purple
+#define def0 0xFF0062// main magenta
+#define sym1 0xFFC800// yellow
+#define num2 0x00FFEA// blue
+#define nav3 0xD900FF// purple
+
+// * Trans theming
+#define trblue 0x5BCEFA// trans blue
+#define trpink 0xF5A9B8// trans pink
+#define trwhit 0xFFFFFF// trans white
 
 / {
 	underglow-layer {
 		compatible  = "zmk,underglow-layer";
 		default {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
-			>;
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit                                                                                                   &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			>
 			layer-id = <DEFAULT>;
 		};
 		symbol {
 			bindings = <
 			&ug sym1 &ug sym1 &ug sym1 &ug sym1 &ug sym1                                                                             &ug sym1     &ug sym1        &ug sym1       &ug sym1     &ug sym1
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <SYMBOL>;
 		};
 		numact {
 			bindings = <
 			&ug num2 &ug num2 &ug num2 &ug num2 &ug num2                                                                             &ug num2     &ug num2        &ug num2       &ug num2     &ug num2
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <NUMACT>;
 		};
 		nav {
 			bindings = <
 			&ug nav3 &ug nav3 &ug nav3 &ug nav3 &ug nav3                                                                             &ug nav3     &ug nav3        &ug nav3       &ug nav3     &ug nav3
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <NAV>;
 		};
 		secret {
 			bindings = <
 			&ug sec4 &ug sec4 &ug sec4 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug sec4       &ug sec4     &ug sec4
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug sec4                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug sec4 &ug sec4 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			        &ug sec4 &ug sec4 &ug blk &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		        &ug trwhit &ug grn &ug grn           &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <SECRET>;
 		};
 		hrmact {
 			bindings = <
-			&ug nav3 &ug def0 &ug nav3 &ug def0 &ug nav3                                                                             &ug nav3     &ug def0        &ug nav3       &ug def0     &ug nav3
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug nav3 &ug nav3 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug nav3 &ug trblue &ug nav3 &ug trpink &ug nav3                                                                             &ug nav3     &ug trpink        &ug nav3       &ug trblue     &ug nav3
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                                 &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                                 &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                                 &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug nav3 &ug nav3 &ug blk &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug def0 &ug grn &ug grn             &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <HRMACT>;
 		};
 		qwerty {
 			bindings = <
 			&ug qwe5 &ug prp &ug grn &ug qwe5 &ug prp                                                                             &ug grn     &ug qwe5        &ug prp       &ug grn     &ug qwe5
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <QWERTY>;
 		};
 		caps {
 			bindings = <
-			&ug onG &ug onG &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug onG     &ug onG
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug onG    &ug onG    &ug trpink &ug trpink &ug trwhit                                                                                                   &ug trwhit &ug trpink &ug trpink &ug onG    &ug onG
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                             &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug onG &ug trpink &ug trblue               &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <CAPLAYER>;
 		};
 		magic {
 			bindings = <
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
-			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit                                                                                        &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                  &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                  &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit                                                                  &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit &ug trwhit &ug trblue &ug trpink &ug trwhit 			 &ug trwhit &ug trpink &ug trblue &ug trwhit &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
+			&ug trblue &ug trblue &ug trpink &ug trpink &ug trwhit            &ug trblue &ug trpink &ug trwhit   		 &ug trwhit &ug trpink &ug trblue            &ug trwhit &ug trpink &ug trpink &ug trblue &ug trblue
 			>;
 			layer-id = <MAGIC>;
 		};
+
+		// ! The original color coding
+		// default {
+		// 	bindings = <
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <DEFAULT>;
+		// };
+		// symbol {
+		// 	bindings = <
+		// 	&ug sym1 &ug sym1 &ug sym1 &ug sym1 &ug sym1                                                                             &ug sym1     &ug sym1        &ug sym1       &ug sym1     &ug sym1
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <SYMBOL>;
+		// };
+		// numact {
+		// 	bindings = <
+		// 	&ug num2 &ug num2 &ug num2 &ug num2 &ug num2                                                                             &ug num2     &ug num2        &ug num2       &ug num2     &ug num2
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <NUMACT>;
+		// };
+		// nav {
+		// 	bindings = <
+		// 	&ug nav3 &ug nav3 &ug nav3 &ug nav3 &ug nav3                                                                             &ug nav3     &ug nav3        &ug nav3       &ug nav3     &ug nav3
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <NAV>;
+		// };
+		// secret {
+		// 	bindings = <
+		// 	&ug sec4 &ug sec4 &ug sec4 &ug sec4 &ug sec4                                                                             &ug sec4     &ug sec4        &ug sec4       &ug sec4     &ug sec4
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4    &ug sec4                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug sec4    &ug sec4 &ug sec4 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug sec4    &ug sec4 &ug sec4 &ug def0 &ug def0 &ug def0 &ug def0 			&ug sec4 &ug sec4 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <SECRET>;
+		// };
+		// hrmact {
+		// 	bindings = <
+		// 	&ug nav3 &ug def0 &ug nav3 &ug def0 &ug nav3                                                                             &ug nav3     &ug def0        &ug nav3       &ug def0     &ug nav3
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug nav3 &ug nav3 &ug blk &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0  	&ug def0 &ug def0   				&ug def0 &ug grn &ug grn  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <HRMACT>;
+		// };
+		// qwerty {
+		// 	bindings = <
+		// 	&ug qwe5 &ug prp &ug grn &ug qwe5 &ug prp                                                                             &ug grn     &ug qwe5        &ug prp       &ug grn     &ug qwe5
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 	&ug def0 &ug def0   				&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <QWERTY>;
+		// };
+		// caps {
+		// 	bindings = <
+		// 	&ug onG &ug onG &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug onG     &ug onG
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug onG &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <CAPLAYER>;
+		// };
+		// magic {
+		// 	bindings = <
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0                                                                             &ug def0     &ug def0        &ug def0       &ug def0     &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0 &ug def0        &ug def0        &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0    &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0    &ug def0    &ug def0 &ug def0 &ug def0                                                            &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0  &ug def0 &ug def0    &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 &ug def0 			&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0  &ug def0
+		// 	&ug def0 &ug def0 &ug def0 &ug def0 &ug def0   &ug def0 &ug def0 &ug def0   					&ug def0 &ug def0 &ug def0  &ug def0   &ug def0 &ug def0  &ug def0  &ug def0
+		// 	>;
+		// 	layer-id = <MAGIC>;
+		// };
 	};
 };
