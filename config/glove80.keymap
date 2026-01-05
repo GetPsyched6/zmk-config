@@ -55,7 +55,7 @@
 			quick-tap-ms = <175>;
 			bindings = <&kp>, <&kp>;
 		};
-
+		
 		holdtapkey_q: hold_tap_keyp_quick {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -343,7 +343,7 @@
 			layers = <1 2 3 4 5 6 7 8>;
 			require-prior-idle-ms = <150>;
 		};
-
+		
 		combo_l_from_def {
 			timeout-ms = <50>;
 			key-positions = <25 26>;
@@ -447,7 +447,7 @@
 			&magic MAGIC 0 &trans &trans     &kp LEFT    &kp RIGHT     &trans    &trans     &trans            &trans  &trans   &trans  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &none
 			>;
 		};
-
+		
 		// DONE L6
 		homerowmod_act_layer {
 			bindings = <
@@ -520,7 +520,7 @@
 // #define nav3 0xFFC800// yellow
 
 // // * Blue theming
-#define def0 0x006EFF// main blue
+// #define def0 0x006EFF// main blue
 // #define sym1 0x2900FF// dark blue
 // #define num2 0x00FF00// green
 // #define nav3 0x00FFEA// blue
@@ -538,6 +538,7 @@
 #define sym1 0x2900FF// dark blue
 #define num2 0x00FF00// green
 #define nav3 0xFFC800// yellow
+#define sec4 0xFF5E00// orange
 
 / {
 	underglow-layer {
@@ -641,7 +642,7 @@
 			>;
 			layer-id = <MAGIC>;
 		};
-
+		
 		// ! The original color coding
 		// default {
 		// 	bindings = <
