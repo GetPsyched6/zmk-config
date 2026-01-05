@@ -533,7 +533,7 @@
 
 // * Trans theming
 #define trblue 0x5BCEFA// trans blue
-#define trpink 0xF5A9B8// trans pink
+#define trpink 0xFF839C// trans pink
 #define trwhit 0xFFFFFF// trans white
 
 / {
