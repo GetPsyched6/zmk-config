@@ -1,10 +1,13 @@
 /*
 * Copyright (c) 2020 The ZMK Contributors
-* Copyright (c) 2025 Hazeline Nishad
+* Copyright (c) 2026 Hazeline Nishad
 *
 * SPDX-License-Identifier: MIT
-* Version: Mark XXVI - 26.1
+* Version: Mark XXVI - 27
 */
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 600  
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
