@@ -6,8 +6,8 @@
 * Version: Mark XXVI - 27
 */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 400  
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100  
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -536,8 +536,8 @@
 // #define nav3 0xD900FF// purple
 
 // * Trans theming
-#define trblue 0x5BCEFA// trans blue
-#define trpink 0xFF72B1// trans pink
+#define trblue 0x79DAFF// trans blue
+#define trpink 0xFF89AC// trans pink
 #define trwhit 0xFFFFFF// trans white
 #define sym1 0x2900FF// dark blue
 #define num2 0x00FF00// green
