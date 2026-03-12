@@ -388,7 +388,7 @@
 			&kp GRAVE        &kp B    &kp L       &kp D       &hrm LSHIFT W       &kp Z                                                                      &sqtund    &hrm LSHIFT F   &kp O       &kp U       &kp J       &none
 			&holdtapkey NAV ESC      &kp N    &kp R       &kp T       &kp S       &kp G                                                                               &kp Y   &kp H   &kp A    &kp E      &kp I    &holdtapkey_q NAV SEMI
 			&kp TAB      &kp Q    &holdtapkey_q HRMACT X       &kp M       &kp C       &kp V   &holdtaplaystick SYMBOL SYMBOL   &kp LCTRL   &none         &none  &kp LALT  &to NUMACT          &kp K   &kp P   &kp DOT   &comques  &mkp LCLK    &none
-			&magic MAGIC 0 &trans &kp P     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &kp LALT         &holdtaplay SECRET CAPLAYER  &kp RET   &kp SPACE         &kp UP  &kp DOWN    &trans    &trans &none
+			&magic MAGIC 0 &trans &kp TAB     &kp LEFT    &kp RIGHT           &kp BSPC    &kp LCMD     &kp LALT         &holdtaplay SECRET CAPLAYER  &kp RET   &kp SPACE         &kp UP  &kp DOWN    &trans    &trans &none
 			>;
 		};
 		
@@ -536,7 +536,7 @@
 // #define nav3 0xD900FF// purple
 
 // * Trans theming
-#define trblue 0x79DAFF// trans blue
+#define trblue 0x9FE4FF// trans blue
 #define trpink 0xFF89AC// trans pink
 #define trwhit 0xFFFFFF// trans white
 #define sym1 0x2900FF// dark blue
